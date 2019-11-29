@@ -14,9 +14,13 @@ let reconciler = ReactReconciler({
     internalInstanceHandle,
   ) {
     let el = document.createElement(type);
-    ['alt', 'className', 'href', 'rel', 'src', 'target'].forEach(k => {
+    ['alt', 'href', 'rel', 'src', 'target'].forEach(k => {
       if (props[k]) el[k] = props[k];
     });
+    
+    if (props.className) {
+      props.class = props.className; 
+    }
 
     if (props.onClick) {
       el.addEventListener('click', props.onClick);
