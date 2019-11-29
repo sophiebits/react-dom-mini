@@ -19,7 +19,7 @@ let reconciler = ReactReconciler({
     });
     
     if (props.className) {
-      props.class = props.className; 
+      el.class = props.className; 
     }
 
     if (props.onClick) {
